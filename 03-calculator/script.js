@@ -19,20 +19,13 @@ buttons.forEach((btn) => {
     } else if (btn.value === "=") {
       let eq = input.value.replaceAll("÷", "/").replaceAll("x", "*");
       equation.innerHTML = input.value;
-      input.value = eval(eq);
+      try {
+        input.value = eval(eq);
+      } catch (error) {
+        input.value = error
+      }
     } else {
-      const start = input.selectionStart;
-      const end = input.selectionEnd;
-      const current = input.value;
-
-      input.value =
-        current.slice(0, start) + btn.value + current.slice(end);
+      input.value += btn.value;
     }
-
-    const newPos = start + btn.value.length;
-    // input.setSelectionRange(newPos, newPos);
-    console.log(input.setSelectionRange(newPos, newPos));
-
-    input.focus();
   });
 });
