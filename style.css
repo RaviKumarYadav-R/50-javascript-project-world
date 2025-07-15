@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Backgrounds */
+  --bg-color: #ffffff; /* crisp white */
+  --card-bg: #fdfdfd; /* soft white */
+  --card-hover-bg: #f1f9ff; /* very light sky-blue for hover */
+
+  /* Text Colors */
+  --text-color: #222831; /* strong neutral black */
+  --text-light: #5a5a5a; /* medium gray */
+
+  /* Accent Colors */
+  --primary-color: #00b8f0; /* bright sky blue */
+  --primary-hover: #009edb; /* darker blue for hover */
+
+  --secondary-color: #ffce3d; /* glowing yellow/orange accent */
+  --highlight-pink: #ff6ec7; /* optional pink pop color */
+
+  /* UI */
+  --shadow-color: rgba(0, 0, 0, 0.06);
+  --border-color: #e0e0e0;
+
+  /* Radius & Font */
+  --radius: 12px;
+  --font-main: "Poppins", "Segoe UI", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+main {
+  background-color: #333;
+}
+
+.header-content {
+  max-width: 1240px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+.header-content .logo span {
+  color: var(--primary-hover);
+}
+
+.header-content nav {
+  background-color: var(--text-color);
+  padding: 0.5rem 2rem;
+  border-radius: 16px;
+  color: var(--card-bg);
+  box-shadow: 0 0 5px #fff;
+}
+
+.header-content nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-content nav ul li a {
+  font-weight: 600;
+  font-family: var(--font-main);
+}
+.header-content nav ul li a:hover {
+  color: var(--secondary-color);
+}
+
+.hero-section {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding: 8rem 4rem;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.8;
+  padding: 0 1rem;
+}
