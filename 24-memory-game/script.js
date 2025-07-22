@@ -2,6 +2,8 @@ const cardBox = document.querySelector(".card-box");
 const moveEl = document.querySelector(".move span");
 const timeEl = document.querySelector(".time span");
 const restartBtn = document.querySelector(".restart");
+const winningPage = document.querySelector(".winning-page");
+const stars = document.querySelectorAll(".fa-star");
 let card1 = null;
 let card2 = null;
 let boardLock = false;
@@ -10,6 +12,7 @@ let matched = 0;
 let time = 0; //in second
 let intervalId = null;
 let gameStarted = false;
+let starGlow = 0;
 
 // Just using emojis for now — duplicate each one for matching
 const emojis = ["🍎", "🍌", "🍇", "🍓", "🍉", "🍒", "🍍", "🥝"];
@@ -21,6 +24,28 @@ function startTimer() {
     const sec = String(time % 60).padStart(2, "0");
     timeEl.innerText = `${min}:${sec}`;
   }, 1000);
+}
+
+function showResult() {
+  cardBox.classList.add("hidden");
+  winningPage.classList.remove("hidden");
+  if (moves <= 10) {
+    starGlow = 3;
+  } else if (moves > 10 && moves <= 15) {
+    starGlow = 2;
+  } else if (moves > 15 && moves <= 25) {
+    starGlow = 1;
+  } else {
+    starGlow = 0;
+  }
+
+  stars.forEach((star, i) => {
+    if (i < starGlow) {
+      star.classList.add("active");
+    } else {
+      star.classList.remove("active");
+    }
+  });
 }
 
 function initGame() {
@@ -60,7 +85,7 @@ function initGame() {
           if (matched === emojis.length) {
             clearInterval(intervalId);
             restartBtn.hidden = false;
-            alert("you completed 🎉 Congratulation!");
+            showResult();
           }
         } else {
           setTimeout(() => {
@@ -87,6 +112,8 @@ restartBtn.addEventListener("click", () => {
   restartBtn.hidden = true;
   timeEl.innerText = "00:00";
   moveEl.innerText = 0;
+  cardBox.classList.remove("hidden");
+  winningPage.classList.add("hidden");
   initGame();
 });
 initGame();
