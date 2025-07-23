@@ -1,33 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 :root {
-  /* Backgrounds */
-  --bg-color: #ffffff; /* crisp white */
-  --card-bg: #fdfdfd; /* soft white */
-  --card-hover-bg: #f1f9ff; /* very light sky-blue for hover */
-
   /* Text Colors */
-  --text-color: #222831; /* strong neutral black */
-  --text-light: #5a5a5a; /* medium gray */
+  --color-text-primary: #24292f;
+  --color-text-secondary: #57606a;
 
-  /* Accent Colors */
-  --primary-color: #00b8f0; /* bright sky blue */
-  --primary-hover: #009edb; /* darker blue for hover */
+  /* Backgrounds */
+  --color-bg-default: #ffffff;
+  --color-bg-muted: #f6f8fa;
+  --color-bg-subtle: #f0f3f6;
 
-  --secondary-color: #ffce3d; /* glowing yellow/orange accent */
-  --highlight-pink: #ff6ec7; /* optional pink pop color */
+  /* Borders */
+  --color-border-default: #d0d7de;
+  --color-border-muted: #eaeef2;
 
-  /* UI */
-  --shadow-color: rgba(0, 0, 0, 0.06);
-  --border-color: #e0e0e0;
+  /* Accent / Links */
+  --color-accent-fg: #0969da;
+  --color-accent-hover: #054da0;
 
-  /* Radius & Font */
-  --radius: 12px;
-  --font-main: "Poppins", "Segoe UI", sans-serif;
+  /* States */
+  --color-success: #2da44e;
+  --color-error: #cf222e;
+  --color-warning: #bf8700;
+
+  /* Button */
+  --color-btn-bg: #f6f8fa;
+  --color-btn-border: #d0d7de;
+  --color-btn-hover-bg: #f3f4f6;
+
+  /* Input */
+  --color-input-bg: #ffffff;
+  --color-input-border: #d0d7de;
+  --color-input-hover-border: #8b949e;
+}
+
+[data-theme="dark"] {
+  --color-text-primary: #c9d1d9;
+  --color-text-secondary: #8b949e;
+
+  --color-bg-default: #0d1117;
+  --color-bg-muted: #161b22;
+  --color-bg-subtle: #21262d;
+
+  --color-border-default: #30363d;
+  --color-border-muted: #21262d;
+
+  --color-accent-fg: #58a6ff;
+  --color-accent-hover: #1f6feb;
+
+  --color-success: #238636;
+  --color-error: #f85149;
+  --color-warning: #e3b341;
+
+  --color-btn-bg: #21262d;
+  --color-btn-border: #30363d;
+  --color-btn-hover-bg: #30363d;
+
+  --color-input-bg: #0d1117;
+  --color-input-border: #30363d;
+  --color-input-hover-border: #8b949e;
 }
 
 a {
@@ -39,18 +77,13 @@ li {
   list-style: none;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Poppins", sans-serif;
-}
-
-body {
-  background-color: var(--bg-color);
-}
-
 main {
-  background-color: #333;
+  background-color: var(--color-bg-default);
+}
+
+header {
+  background-color: var(--color-bg-muted);
+  border-bottom: 1px solid var(--color-border-default);
 }
 
 .header-content {
@@ -61,16 +94,16 @@ main {
   justify-content: space-between;
   padding: 1.5rem;
 }
+.header-content .logo {
+  color: var(--color-text-primary);
+}
 
 .header-content .logo span {
-  color: var(--primary-hover);
+  color: var(--color-accent-fg);
 }
 
 .header-content nav {
-  background-color: var(--text-color);
-  padding: 0.5rem 2rem;
-  border-radius: 16px;
-  color: var(--card-bg);
+  color: var(--color-text-primary);
   box-shadow: 0 0 5px #fff;
 }
 
@@ -82,25 +115,29 @@ main {
 
 .header-content nav ul li a {
   font-weight: 600;
-  font-family: var(--font-main);
 }
 .header-content nav ul li a:hover {
-  color: var(--secondary-color);
+  color: var(--color-accent-hover);
 }
 
 .hero-section {
   max-width: 1240px;
   margin-inline: auto;
-  padding: 8rem 4rem;
+  padding: 8rem 1rem;
 }
 
 .hero-section h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
   text-align: center;
   color: var(--text-color);
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   line-height: 1.2;
+  font-weight: 900;
+}
+
+.hero-section h1 span {
+  color: var(--color-accent-fg);
 }
 
 .hero-section p {
@@ -109,6 +146,85 @@ main {
   max-width: 700px;
   text-align: center;
   margin: 0 auto;
-  line-height: 1.8;
+  line-height: 1.6;
   padding: 0 1rem;
+  z-index: 1;
+}
+
+.hero-section .github-repo {
+  width: max-content;
+  border: 1px solid var(--color-text-primary);
+  display: block;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 2rem auto 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero-section .github-repo i {
+  margin-right: 0.5rem;
+  font-size: 2rem;
+}
+
+.hero-section .github-repo:hover {
+  background-color: var(--color-text-secondary);
+  color: var(--color-bg-default);
+}
+
+.project-section {
+  max-width: 1240px;
+  padding: 2rem;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.project-section .project-card {
+  overflow: hidden;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-default);
+  position: relative;
+}
+
+.project-card .image img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.project-card .project-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  background-color: var(--color-bg-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: 0.2s ease-in;
+}
+
+.project-card:hover .project-content {
+  top: 0;
+}
+
+@media (max-width: 740px) {
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .header-content nav ul {
+    gap: 1rem;
+  }
+  .hero-section h1 {
+    font-size: 2rem;
+  }
 }

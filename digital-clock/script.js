@@ -12,6 +12,10 @@ function updateClock() {
   let day = now.toLocaleDateString("en-IN", { weekday: "short" });
   let date = now.toLocaleDateString("en-IN", { dateStyle: "long" });
 
+  hour = hour < 10 ? "0" + hour : hour;
+  minute = minute < 10 ? "0" + minute : minute;
+  second = second < 10 ? "0" + second : second;
+
   hourEl.innerHTML = hour;
   minuteEl.innerHTML = minute;
   secondEl.innerHTML = second;
