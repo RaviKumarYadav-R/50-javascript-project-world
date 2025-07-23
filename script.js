@@ -4,6 +4,26 @@ const projects = [
     name: "digital-clock",
     imageLink: "01-digital-clock.png",
   },
+  {
+    number: 2,
+    name: "todo-list",
+    imageLink: "02-todo-list.png",
+  },
+  {
+    number: 3,
+    name: "calculator",
+    imageLink: "03-calculator.png",
+  },
+  {
+    number: 4,
+    name: "quiz-app",
+    imageLink: "04-quiz-app.png",
+  },
+  {
+    number: 5,
+    name: "weather-app",
+    imageLink: "05-weather-app.png",
+  },
 ];
 
 const projectSection = document.querySelector(".project-section");
@@ -12,12 +32,15 @@ projects.forEach((project) => {
   projectCard.classList.add("project-card");
 
   projectCard.innerHTML = `<div class="image">
-          <img src="./images/${project.imageLink}" alt="${project.name}" />
+          <img src="./images/${project.imageLink}" alt="${
+    project.name
+  } loading="lazy" />
+          <span>${project.number}</span>
         </div>
 
         <div class="project-content">
           <h3>${formateName(project.name)}</h3>
-          <a href="./${project.name}/">Live Preview</a>
+          <a target="_blank" href="./${project.name}/">Live Preview</a>
         </div>`;
 
   projectSection.appendChild(projectCard);

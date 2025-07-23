@@ -159,10 +159,12 @@ header {
   border-radius: 8px;
   margin: 2rem auto 0;
   transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .hero-section .github-repo i {
-  margin-right: 0.5rem;
   font-size: 2rem;
 }
 
@@ -177,6 +179,7 @@ header {
   margin-inline: auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 }
 
 .project-section .project-card {
@@ -187,9 +190,28 @@ header {
   position: relative;
 }
 
+.project-card .image {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
 .project-card .image img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
+}
+
+.project-card .image span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 2rem;
+  background-color: var(--color-accent-hover);
+  color: var(--color-bg-default);
+  border-radius: 0 0 0 8px;
 }
 
 .project-card .project-content {
@@ -207,8 +229,115 @@ header {
   transition: 0.2s ease-in;
 }
 
+.project-card .project-content a {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-text-secondary);
+  background-color: var(--color-accent-fg);
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+.project-card .project-content a:hover {
+  background-color: var(--color-accent-hover);
+}
+
 .project-card:hover .project-content {
   top: 0;
+}
+
+.about-section {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding: 2rem 4rem;
+  background-color: var(--color-bg-subtle);
+  text-align: center;
+  border-top: 2px solid var(--color-border-default);
+}
+
+.about-heading {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.about-box {
+  background-color: var(--color-text-secondary);
+  color: var(--color-bg-default);
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+}
+
+.about-box h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.about-box span {
+  font-weight: bold;
+  color: var(--color-warning);
+}
+
+.social-media {
+  width: max-content;
+  display: flex;
+  gap: 1rem;
+  margin: 2rem auto 0;
+}
+
+.social-media a {
+  font-size: 2rem;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.social-media a:hover {
+  color: var(--color-accent-fg);
+}
+
+.footer {
+  background-color: #f6f8fa;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+  border-top: 1px solid #e1e4e8;
+  font-size: 0.9rem;
+  color: #586069;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  margin: 0 0.5rem;
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-social {
+  margin-top: 0.8rem;
+}
+
+.footer-social a {
+  margin: 0 0.5rem;
+  font-size: 1.4rem;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: #0366d6;
+}
+
+@media (max-width: 856px) {
+  .project-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 740px) {
@@ -219,6 +348,16 @@ header {
   .hero-section p {
     font-size: 1rem;
   }
+
+  .project-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .about-heading {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 480px) {
   .header-content nav ul {
@@ -226,5 +365,16 @@ header {
   }
   .hero-section h1 {
     font-size: 2rem;
+  }
+
+  .project-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .about-section {
+    padding: 2rem 2rem;
+  }
+  .about-box h4 {
+    font-size: 1rem;
   }
 }
