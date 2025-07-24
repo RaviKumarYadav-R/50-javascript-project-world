@@ -28,6 +28,8 @@ body {
   border-radius: 10px;
   font-size: 1.3rem;
   text-align: justify;
+  letter-spacing: 1px;
+  word-break: break-all;
 }
 
 .paragraph span {

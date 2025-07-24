@@ -77,7 +77,7 @@ tryAgain.addEventListener("click", () => {
   typingStarted = false;
   mistakeEl.innerText = 0;
   timeEl.innerText = time;
-  tryAgain.classList.add(".hidden");
+  tryAgain.classList.add("hidden");
 });
 addPara();
 document.addEventListener("keydown", () => input.focus());
