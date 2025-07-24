@@ -36,7 +36,6 @@ async function convertCurrency() {
     );
     if (!response.ok) throw new Error("Conversion rate not found");
     const data = await response.json();
-    console.log(data);
     const rate = data.rates[to];
     if (!rate) throw new Error("Selected currency not supported");
     const convertedAmount = (amount.value * rate).toFixed(2);

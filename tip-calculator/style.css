@@ -13,6 +13,7 @@ body {
   justify-content: center;
   height: 100vh;
   background-color: #4ffbdf;
+  padding: 16px;
 }
 
 .wrapper {

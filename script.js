@@ -119,6 +119,11 @@ const projects = [
     name: "memory-game",
     imageLink: "24-memory-game.png",
   },
+  {
+    number: 25,
+    name: "typing-speed-test",
+    imageLink: "25-typing-speed-test.png",
+  },
 ];
 
 const projectSection = document.querySelector(".project-section");

@@ -13,9 +13,12 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  padding-inline: 16px  ;
 }
 
 .wrapper {
+  max-width: 500px;
+  width: 100%;
   padding: 2rem;
   border: 1px solid #fff;
   border-radius: 16px;
@@ -38,6 +41,11 @@ body {
 .wrapper input::-webkit-inner-spin-button {
   appearance: none;
 }
+
+.wrapper .group-box {
+  width: 100%;
+}
+
 .wrapper .group-box .group label {
   display: block;
   margin-bottom: 0.5rem;
@@ -48,7 +56,7 @@ body {
 .wrapper .group-box .group select {
   width: 100%;
   appearance: base-select;
-  padding: 0.2rem 1rem;
+  padding: 0.5rem 1rem;
   outline: none;
   border: 1px solid #fff;
   background-color: transparent;
@@ -85,7 +93,7 @@ body {
   cursor: pointer;
 }
 
-.wrapper .result{
+.wrapper .result {
   width: 100%;
   text-align: center;
   background-color: #fff;

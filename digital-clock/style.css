@@ -40,7 +40,6 @@ body {
   color: #f0f0f0;
 }
 
-/* Optional: Responsive Design */
 @media (max-width: 600px) {
   .clock-container {
     padding: 30px 40px;
@@ -52,5 +51,18 @@ body {
 
   .calander {
     font-size: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .clock-container {
+    padding: 15px 20px;
+  }
+
+  .clock {
+    font-size: 32px;
+  }
+
+  .calander {
+    font-size: 16px;
   }
 }

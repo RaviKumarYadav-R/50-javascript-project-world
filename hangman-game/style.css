@@ -27,6 +27,9 @@ body {
 }
 .container .image {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .container .image img {
   width: 80%;
