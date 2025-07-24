@@ -1,12 +1,12 @@
 import paragraphs from "./paragraphs.js";
 
 const ParagraphEl = document.querySelector(".paragraph");
-const input = document.querySelector("input");
+const input = document.querySelector("#input");
 const timeEl = document.querySelector(".timer span");
 const mistakeEl = document.querySelector(".mistakes span");
 const tryAgain = document.querySelector(".try-again");
 
-const time = 60;
+const time = 5;
 let timeleft = time;
 let index = 0;
 let intervalId = null;
@@ -77,6 +77,7 @@ tryAgain.addEventListener("click", () => {
   typingStarted = false;
   mistakeEl.innerText = 0;
   timeEl.innerText = time;
+  input.value = "";
   tryAgain.classList.add("hidden");
 });
 addPara();
