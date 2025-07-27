@@ -152,3 +152,14 @@ function formateName(proName) {
     .map((word) => word[0].toUpperCase() + word.slice(1))
     .join(" ");
 }
+
+// Add scroll progress bar functionality
+window.addEventListener("scroll", function () {
+  const scrollTop = document.documentElement.scrollTop;
+  const documentHeight = document.documentElement.scrollHeight;
+  const windowHeight = document.documentElement.clientHeight;
+  const progressBar = document.getElementById("progress-bar");
+
+  const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+  progressBar.style.width = scrollPercent + "%";
+});
