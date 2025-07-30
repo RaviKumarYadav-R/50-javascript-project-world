@@ -23,7 +23,7 @@ This repository is not just a collection of code — it's a record of growth, cr
 
 ## 📦 Project List
 
-| No. | Project Name              | 🔗 Live Demo | 💻 Source Code               |
+| No. | Project Name              | 🔗 Live Demo | 💻 Source Code              |
 | --- | ------------------------- | ------------ | ---------------------------- |
 | 01  | Digital Clock             | [Live](#)    | [Code](./digital-clock)      |
 | 02  | To-Do List                | [Live](#)    | [Code](./todo-list)          |
@@ -61,13 +61,13 @@ This repository is not just a collection of code — it's a record of growth, cr
 | 34  | Character Counter         | [Live](#)    | [Code](./char-counter)       |
 | 35  | Star Rating Component     | [Live](#)    | [Code](./star-rating)        |
 | 36  | Random User Generator     | [Live](#)    | [Code](./random-user)        |
-| 37  | Calendar with Events      | [Live](#)    | [Code](./calendar-events)    |
+| 37  | Drag and Drop             | [Live](#)    | [Code](./drag-drop)          |
 | 38  | Stopwatch                 | [Live](#)    | [Code](./stopwatch)          |
 | 39  | File Upload Preview       | [Live](#)    | [Code](./file-upload)        |
 | 40  | Infinite Scroll Blog      | [Live](#)    | [Code](./infinite-scroll)    |
 | 41  | Sticky Note App           | [Live](#)    | [Code](./sticky-notes)       |
 | 42  | QR Code Generator         | [Live](#)    | [Code](./qr-generator)       |
-| 43  | Drag and Drop To-Do List  | [Live](#)    | [Code](./drag-drop-todo)     |
+| 43  | File Drag And Drop        | [Live](#)    | [Code](./file-drag-and-drop) |
 | 44  | Drawing App (Canvas)      | [Live](#)    | [Code](./drawing-app)        |
 | 45  | Login UI with Validation  | [Live](#)    | [Code](./login-ui)           |
 | 46  | Responsive Navbar Toggle  | [Live](#)    | [Code](./responsive-navbar)  |
