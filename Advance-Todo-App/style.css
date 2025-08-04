@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.wrapper {
+  max-width: 800px;
+  border: 1px solid #000;
+  margin: 5rem auto;
+  padding: 1rem;
+}
+
+.wrapper form {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #000;
+  padding-bottom: 0.5rem;
+}
+
+.wrapper form input {
+  flex-grow: 1;
+}
+.wrapper form button {
+  cursor: pointer;
+  background-color: royalblue;
+  color: #fff;
+  transition: 0.2s ease-in;
+}
+.wrapper form button:hover {
+  background-color: rgb(14, 69, 232);
+}
+
+.wrapper form :where(input, button) {
+  padding: 0.5rem 1rem;
+  border: 1px solid #000;
+  outline: none;
+  border-radius: 4px;
+}
+
+.wrapper .list-container .task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  padding: 0 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.list-container .task #toggleComplete {
+  appearance: none;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 1rem;
+}
+.list-container .task #toggleComplete:checked {
+  background-color: green;
+}
+
+.wrapper .list-container .task .task-input {
+  flex-grow: 1;
+  border: none;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.list-container .task button {
+  height: 100%;
+  padding: 0.3rem;
+  cursor: pointer;
+  border: 1px solid #000;
+  border-radius: 0.25rem;
+  margin-left: 0.5rem;
+  background-color: transparent;
+}
+
+.search-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-filter .input-group {
+  border: 1px solid #000;
+  padding-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.search-filter .input-group input {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.search-filter .filter {
+  position: relative;
+}
+
+.search-filter #filter {
+  padding: 0.3rem 2rem;
+  cursor: pointer;
+  background-color: #141414;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.search-filter .filter-btn-box {
+  position: absolute;
+  top: 30px;
+  padding: 0.5rem;
+  background-color: #141414;
+  border-radius: 8px;
+}
+
+.search-filter .filter-btn-box .filter-btn {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 0.2rem;
+  margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.search-filter .filter-btn-box .filter-btn label {
+  width: 100%;
+  cursor: pointer;
+}
+
+.hidden{
+  display: none;
+}
