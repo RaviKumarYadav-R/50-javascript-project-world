@@ -20,6 +20,10 @@
   --color-shadow: #00ffff22;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 #progress-container {
   position: fixed;
   top: 0;
