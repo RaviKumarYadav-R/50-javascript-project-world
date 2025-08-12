@@ -32,6 +32,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -57,6 +61,7 @@ h3 {
 .header {
   background-color: var(--header-bg);
   border-bottom: 1px solid var(--border);
+  position: relative;
 }
 .header-content {
   max-width: 1240px;
@@ -68,7 +73,8 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
+  gap: 1rem;
 }
 .header .upper-nav .logo {
   font-family: "Montserrat", sans-serif;
@@ -82,6 +88,16 @@ h3 {
 .header .upper-nav .nav-contact {
   display: flex;
   gap: 1rem;
+  margin-left: auto;
+}
+
+.header .hamburger {
+  background-color: transparent;
+  font-size: 1.5rem;
+  border: none;
+  color: inherit;
+  display: none;
+  cursor: pointer;
 }
 .header nav {
   background-color: var(--border);
@@ -117,8 +133,6 @@ h3 {
 }
 
 .hero {
-  /* max-width: 1240px;
-  margin-inline: auto; */
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(./hero.jpg);
   background-size: cover;
@@ -331,7 +345,6 @@ footer {
   border-top: 1px solid var(--border);
 }
 
-
 footer .footer-container {
   max-width: 1240px;
   margin-inline: auto;
@@ -367,4 +380,87 @@ footer .copyright {
   text-align: center;
   margin-top: 0.5rem;
   color: var(--text-light);
+}
+
+@media (max-width: 865px) {
+  .header {
+    padding-top: 1.5rem;
+  }
+  .header .hamburger {
+    display: block;
+  }
+
+  .header .upper-nav .nav-contact {
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+  .header .upper-nav .nav-contact a {
+    font-size: 0.8rem;
+  }
+
+  .header nav {
+    position: absolute;
+    flex-direction: column;
+    gap: 2rem;
+    top: 100%;
+    left: 0;
+    border-radius: unset;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    display: none;
+  }
+
+  .header nav.nav-open {
+    display: flex;
+    height: auto;
+  }
+  .header nav ul {
+    flex-direction: column;
+  }
+
+  .hero .hero-content h1 {
+    font-size: 2rem;
+  }
+  .services .service-provided {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .header .upper-nav .logo {
+    font-size: 1.5rem;
+  }
+  .header .upper-nav .nav-contact {
+    width: 100%;
+  }
+
+  .hero {
+    padding: 8rem 1rem;
+  }
+
+  .hero-content ul {
+    margin-top: 2rem;
+  }
+
+  .services .service-provided {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  footer .footer-container {
+    flex-direction: column;
+    align-items: unset;
+  }
+
+  .footer-container .contact-info,
+  .footer-container .map-section {
+    flex: 1 1 250px;
+  }
+
+  footer .copyright{
+    font-size: 0.8rem;
+  }
 }
